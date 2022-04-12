@@ -1,8 +1,8 @@
 package com.caresoft.clinicapp;
 
 public class User {
-	protected Integer id;
-	protected int pin;
+	public Integer id;
+	public int pin;
 	
 
 	public User(Integer id) {
