@@ -22,9 +22,4 @@ public class DaikichiPathVarController {
 		}
 	}
 	
-	@RequestMapping("/daikichi/tomorrow")
-	public String tomorrow() {
-		return "Tomorrow, an opportunity will arise, so be sure to be open to new ideas!";
-	}
-	
 }
