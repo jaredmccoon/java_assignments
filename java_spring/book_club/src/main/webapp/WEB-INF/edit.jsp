@@ -23,9 +23,6 @@
 <div class="container">
 	<h1>Edit Book</h1>
 	book id = ${book.id }
-	<p>
-		${book.library }
-	</p>
 	<hr />
 	<form:form action="/books/${book.id}" 
 				method="post"
@@ -49,7 +46,6 @@
 			<form:errors path="mythoughts" />
 			<form:input path="mythoughts" />
 		</p>	
-		<form:hidden path="library" value="${book.library.id }"/>
 		<input type="submit" value="Submit" />
 	</form:form>
 </div>

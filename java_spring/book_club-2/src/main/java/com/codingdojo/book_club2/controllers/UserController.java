@@ -1,4 +1,4 @@
-package com.codingdojo.book_club.controllers;
+package com.codingdojo.book_club2.controllers;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -12,12 +12,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.codingdojo.book_club.models.LoginUser;
-import com.codingdojo.book_club.models.User;
-import com.codingdojo.book_club.services.UserService;
+import com.codingdojo.book_club2.models.LoginUser;
+import com.codingdojo.book_club2.models.User;
+import com.codingdojo.book_club2.services.UserService;
+
 
 @Controller
-public class AuthController {
+public class UserController {
 	
 	@Autowired
 	private UserService userServ;
@@ -49,7 +50,7 @@ public class AuthController {
 	        return "index.jsp";
 		} else {
 			sesh.setAttribute("user_id", newUser.getId());
-			return "redirect:/home";
+			return "redirect:/books";
 		}
 	}
 	
@@ -67,7 +68,7 @@ public class AuthController {
 			return "index.jsp";
 		} else {
 			sesh.setAttribute("user_id", user.getId());
-			return "redirect:/home";
+			return "redirect:/books";
 		}
 		
 		
@@ -86,7 +87,7 @@ public class AuthController {
 			User thisUser = userServ.findOne(userId);
 			m.addAttribute("thisUser", thisUser);			
 //			m.addAttribute("thisUser", thisUser.getUserName());			
-			return "home.jsp";
+			return "books.jsp";
 		}
 	}
 	
